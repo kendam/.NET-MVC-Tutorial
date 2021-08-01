@@ -1,0 +1,35 @@
+﻿@page
+@model AboutModel
+@{
+
+    string[] services = { "Book Sales", "Consulting", "Tutorial services" };
+
+}
+
+<div class="text-center">
+    <img src="~/images/bookstorelogo.png" alt="Store Logo" class="site-logo" />
+
+    <h3>
+        @ViewData["WelcomeMessage"]
+    </h3>
+
+    <h3> Services</h3>
+    @foreach( string service in services)
+            {
+                <div class="alert alert-info"> @service </div>
+            }
+
+    <h3> Clients </h3>
+    <div class="row">
+        @foreach (string client in Model.clients)
+        {
+
+            <div class="col ">
+                @client
+            </div>
+        }
+    </div>
+
+
+
+</div>
